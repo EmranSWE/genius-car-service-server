@@ -13,6 +13,7 @@ app.use(express.json());
 function verifyJWT(req, res, next) {
 
     const authHeader = req.headers.authorization;
+
     if (!authHeader) {
         return res.status(401).send({ message: 'unauthorized user' })
     }
